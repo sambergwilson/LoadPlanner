@@ -2623,11 +2623,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner\\LoadPlanner.csproj",
-      "projectName": "LoadPlanner",
-      "projectPath": "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner\\LoadPlanner.csproj",
+      "projectUniqueName": "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner.DataAccess\\LoadPlanner.DataAccess.csproj",
+      "projectName": "LoadPlanner.DataAccess",
+      "projectPath": "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner.DataAccess\\LoadPlanner.DataAccess.csproj",
       "packagesPath": "C:\\Users\\Wilson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner\\obj\\",
+      "outputPath": "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2679,9 +2679,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
