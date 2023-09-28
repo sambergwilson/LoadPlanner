@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadPlanner", "LoadPlanner\LoadPlanner.csproj", "{5E787814-DE86-4A2B-8B16-6013BC0DDFAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadPlanner.DataAccess", "LoadPlanner.DataAccess\LoadPlanner.DataAccess.csproj", "{ACDA5014-CDA8-495D-B874-2CAFCB49F184}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5E787814-DE86-4A2B-8B16-6013BC0DDFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E787814-DE86-4A2B-8B16-6013BC0DDFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E787814-DE86-4A2B-8B16-6013BC0DDFAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACDA5014-CDA8-495D-B874-2CAFCB49F184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACDA5014-CDA8-495D-B874-2CAFCB49F184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACDA5014-CDA8-495D-B874-2CAFCB49F184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACDA5014-CDA8-495D-B874-2CAFCB49F184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
