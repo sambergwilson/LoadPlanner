@@ -26,34 +26,37 @@ namespace LoadPlanner.DataAccess.Repositories
             return load.LoadID;
         }
 
-        public int Update(LoadPlannerModel load)
+        public int AssignedLoad(LoadPlannerModel load)
         {
-            LoadPlannerModel existingLoad = _context.LoadModel.Find(load.LoadID);
+            LoadPlannerModel existingLoad = _context.LoadModel.Find(load.LoadID)!;
 
-            existingLoad.LoadCode = load.LoadCode;
-            existingLoad.RouteNumber = load.RouteNumber;
-            existingLoad.LocationCode = load.LocationCode;
-            existingLoad.LocationDescription = load.LocationDescription;
-            existingLoad.LocationAddress = load.LocationAddress;
-            existingLoad.DriverName = load.DriverName;
-            existingLoad.TruckCode = load.TruckCode;
-            existingLoad.IsAssigned = load.IsAssigned;
-            existingLoad.IsDeleted = load.IsDeleted;
-            existingLoad.AssignedDate = load.AssignedDate;
-            existingLoad.CompletedDate = load.CompletedDate;
-            existingLoad.IsArchived = load.IsArchived;
+            if (existingLoad != null)
+            {
+                existingLoad.DriverName = load.DriverName;
+                existingLoad.TruckCode = load.TruckCode;
+                existingLoad.IsAssigned = true;
+                existingLoad.AssignedDate = load.AssignedDate;
 
-            _context.SaveChanges();
+                _context.SaveChanges();
+            }
 
-            return existingLoad.LoadID;
+            return load.LoadID;
+        }
+
+        public int UnassignedLoad(LoadPlannerModel load)
+        {
+
         }
 
         public bool Delete(int loadID)
         {
-            LoadPlannerModel load = _context.LoadModel.Find(loadID);
+            LoadPlannerModel load = _context.LoadModel.Find(loadID)!;
 
-            _context.Remove(load);
-            _context.SaveChanges();
+            if (load != null)
+            {
+                load.IsDeleted = true;
+                _context.SaveChanges();
+            }
 
             return true;
         }
@@ -67,9 +70,10 @@ namespace LoadPlanner.DataAccess.Repositories
 
         public LoadPlannerModel GetLoadById(int loadID)
         {
-            LoadPlannerModel loaded = _context.LoadModel.Find(loadID);
+            LoadPlannerModel loaded = _context.LoadModel.Find(loadID)!;
 
             return loaded;
         }
-    }
+
+     }
 }

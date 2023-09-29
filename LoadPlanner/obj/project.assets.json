@@ -960,6 +960,19 @@
             "rid": "win"
           }
         }
+      },
+      "LoadPlanner.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11"
+        },
+        "compile": {
+          "bin/placeholder/LoadPlanner.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LoadPlanner.DataAccess.dll": {}
+        }
       }
     }
   },
@@ -2609,10 +2622,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "LoadPlanner.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../LoadPlanner.DataAccess/LoadPlanner.DataAccess.csproj",
+      "msbuildProject": "../LoadPlanner.DataAccess/LoadPlanner.DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "LoadPlanner.DataAccess >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11"
     ]
   },
@@ -2649,7 +2668,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner.DataAccess\\LoadPlanner.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Wilson\\OneDrive\\Desktop\\2023\\LoadPlanner\\LoadPlanner.DataAccess\\LoadPlanner.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
