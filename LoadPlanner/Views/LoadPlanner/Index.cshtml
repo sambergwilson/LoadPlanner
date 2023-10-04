@@ -1,0 +1,22 @@
+﻿@model LoadPlannerViewModel;
+
+<h1>Load Planner</h1>
+<table>
+    <tr>
+        <th>Load Code</th>
+        <th>Route Number</th>
+        <th>Location Code</th>
+        <th>Location Description</th>
+        <th>Location Address</th>
+    </tr>
+    @foreach(var item in Model.LoadList)
+    {
+        <tr>
+            <td>@item.LoadCode</td>
+            <td>@item.RouteNumber</td>
+            <td>@item.LocationCode</td>
+            <td>@item.LocationDescription</td>
+            <td>@item.LocationAddress</td>
+        </tr>
+    }
+</table>

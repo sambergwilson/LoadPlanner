@@ -35,7 +35,7 @@ namespace LoadPlanner.DataAccess.Repositories
                 existingLoad.DriverName = load.DriverName;
                 existingLoad.TruckCode = load.TruckCode;
                 existingLoad.IsAssigned = true;
-                existingLoad.AssignedDate = load.AssignedDate;
+                existingLoad.AssignedDate = DateTime.UtcNow;
 
                 _context.SaveChanges();
             }
@@ -45,7 +45,7 @@ namespace LoadPlanner.DataAccess.Repositories
 
         public int UnassignedLoad(LoadPlannerModel load)
         {
-
+            return load.LoadCode;
         }
 
         public bool Delete(int loadID)

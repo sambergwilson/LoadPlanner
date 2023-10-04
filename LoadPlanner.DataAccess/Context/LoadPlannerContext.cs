@@ -21,6 +21,13 @@ namespace LoadPlanner.DataAccess.Context
 
         // This property is of DbSet < Model > variable you call on
         public DbSet<LoadPlannerModel> LoadModel { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if(!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=DESKTOP-GMO2ILF\\SQLEXPRESS02;Database=LoadPlanner;Trusted_Connection=True;TrustServerCertificate=True;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +36,8 @@ namespace LoadPlanner.DataAccess.Context
                 {
                     // This is where you set up the 
                     // Configurations of the Db properites
+                    // When you mess up you change the name the table is reading
+                    entity.ToTable("LoadInformation");
                     entity.HasKey(e => e.LoadID);
                     entity.Property(e => e.LoadID);
                     entity.Property(e => e.LoadCode);
@@ -36,9 +45,9 @@ namespace LoadPlanner.DataAccess.Context
                     entity.Property(e => e.LocationCode);
                     entity.Property(e => e.LocationDescription);
                     entity.Property(e => e.LocationAddress);
-                    entity.Property(e => e.DriverName);
+                    entity.Property(e => e.DriverName).IsRequired(required:false);
                     entity.Property(e => e.DriverCode);
-                    entity.Property(e => e.TruckCode);
+                    entity.Property(e => e.TruckCode).IsRequired(required: false);
                     entity.Property(e => e.IsAssigned);
                     entity.Property(e => e.IsDeleted);
                     entity.Property(e => e.AssignedDate);

@@ -1,0 +1,12 @@
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\bin\Debug\net7.0\LoadPlanner.DataAccess.deps.json
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\bin\Debug\net7.0\LoadPlanner.DataAccess.dll
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\bin\Debug\net7.0\LoadPlanner.DataAccess.pdb
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\LoadPlanner.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\LoadPlanner.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\LoadPlanner.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\LoadPlanner.DataAccess.AssemblyInfo.cs
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\LoadPlanner.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\LoadPlanner.DataAccess.dll
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\refint\LoadPlanner.DataAccess.dll
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\LoadPlanner.DataAccess.pdb
+C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner.DataAccess\obj\Debug\net7.0\ref\LoadPlanner.DataAccess.dll

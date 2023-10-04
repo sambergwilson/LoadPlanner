@@ -16,12 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Wilson\OneDrive\Desktop\2023\LoadPlanner\LoadPlanner
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Wilson/OneDrive/Desktop/2023/LoadPlanner/LoadPlanner/Views/AssignedLoads/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWduZWRMb2Fkc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Wilson/OneDrive/Desktop/2023/LoadPlanner/LoadPlanner/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Wilson/OneDrive/Desktop/2023/LoadPlanner/LoadPlanner/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Wilson/OneDrive/Desktop/2023/LoadPlanner/LoadPlanner/Views/LoadPlanner/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZFBsYW5uZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Wilson/OneDrive/Desktop/2023/LoadPlanner/LoadPlanner/Views/LoadPlanner/LoadDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZFBsYW5uZXJcTG9hZERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Wilson/OneDrive/Desktop/2023/LoadPlanner/LoadPlanner/Views/Shared/Error.cshtml]

@@ -1,7 +1,19 @@
+using LoadPlanner.DataAccess.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+IConfiguration configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .AddEnvironmentVariables().Build();
+
+builder.Services.AddDbContext<LoadPlannerContext>(
+    optionsAction =>
+    {
+        optionsAction.UseSqlServer(configuration.GetConnectionString("LoadPlannerDB"));
+    });
 
 var app = builder.Build();
 
