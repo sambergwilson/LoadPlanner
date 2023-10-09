@@ -1,6 +1,6 @@
-﻿@model LoadPlannerViewModel
+﻿
 
-<form action="~/LoadPlanner/Index" method="post">
+<form class="row" action="~/LoadPlanner/CreatePage" method="post">
     <div>
         <div class="row">
             <div class="col-6 offset-3 text-center">
@@ -10,17 +10,17 @@
         <div class="form-row">
             <div class="col-md-3 offset-md-3 form-group">
                 <label>Load Code: </label>
-                <input type="number" class="form-control" name="loadCode" @* value="@Model.CurrentLoad.LoadCode" *@ />
+                <input type="number" class="form-control"  name="loadCode" @* value="@Model.CurrentLoad.LoadCode" *@ />
             </div>
             <div class="col-md-3 offset-md-3 form-group">
                 <label>Route Number: </label>
-                <input type="number" class="form-control" name="routeNumber" @* value="@Model.CurrentLoad.RouteNumber" *@ />
+                <input type="number" class="form-control"  name="routeNumber" @* value="@Model.CurrentLoad.RouteNumber" *@ />
             </div>
         </div>
         <div class="form-row">
             <div class="col-md-2 offset-md-3 form-group">
                 <label>Location Code: </label>
-                <input type="number" class="form-control" name="locationCode" @* value="@Model.CurrentLoad.LocationCode" *@ />
+                <input type="number"  class="form-control" name="locationCode" @* value="@Model.CurrentLoad.LocationCode" *@ />
             </div>
         </div>
         <div class="form-row">

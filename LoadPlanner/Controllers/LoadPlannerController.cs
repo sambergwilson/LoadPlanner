@@ -23,42 +23,42 @@ namespace LoadPlanner.Controllers
             // This is saying the first or default of the load list
             viewModel.CurrentLoad = viewModel.LoadList.FirstOrDefault();
 
-            return View(viewModel);
+            return View("Index", viewModel);
         }
 
+        public IActionResult DeleteLoad(int loadID)
+        {
+            var currentLoad = loadID;
+
+            if (currentLoad > 0)
+            {
+                _repo.Delete(loadID);
+                /*viewModel.IsActionSuccess = true;
+                viewModel.ActionMessage = "Load has been deleted Successfully.";*/
+            }
+            else
+            {
+                /*viewModel.IsActionSuccess = false;
+                viewModel.ActionMessage = "Error deleting the load please contact the Administrator.";*/
+            }
+
+            var updatedList = GetAllLoads();
+            var viewModel = new LoadPlannerViewModel();
+            viewModel.LoadList = updatedList;
+
+
+            return View("Index", viewModel);
+        }
+
+        [HttpGet]
         public IActionResult CreatePage() 
         {
             return View("CreatePage");
         }
 
-        // Reason this is private is beacuse I will only be using this method on this view
-        private List<LoadPlannerModel>? GetAllLoads()
+        [HttpPost]
+        public IActionResult CreatePage(int loadCode, int routeNumber, int locationCode, string locationDescription, string locationAddress)
         {
-            return _repo.GetAllLoads();
-        }
-
-        public IActionResult Delete(int loadID)
-        {
-            LoadPlannerViewModel viewModel = new LoadPlannerViewModel();
-            var currentLoad = _repo.GetLoadById(loadID);
-            if (currentLoad != null) 
-            {
-                _repo.Delete(currentLoad.LoadID);
-                viewModel.IsActionSuccess = true;
-                viewModel.ActionMessage = "Load has been deleted successfully.";
-            }
-            else 
-            {
-                viewModel.IsActionSuccess = false;
-                viewModel.ActionMessage = "Error deleting the load please call the Administrator!";
-            }
-
-            return View("Index", viewModel);
-        }
-
-        /*public IActionResult CreatePage(int loadCode, int routeNumber, int locationCode, string locationDescription, string locationAddress)
-        {
-            LoadPlannerViewModel model = new LoadPlannerViewModel();
             var newLoad = new LoadPlannerModel()
             {
                 LoadCode = loadCode,
@@ -68,7 +68,13 @@ namespace LoadPlanner.Controllers
                 LocationAddress = locationAddress
             };
 
-            if (newLoad != null)
+            _repo.Create(newLoad);
+
+            var updatedLoadList = GetAllLoads();
+            LoadPlannerViewModel viewModel = new LoadPlannerViewModel();
+
+            viewModel.LoadList = updatedLoadList;
+            /*if (newLoad != null)
             {
                 _repo.Create(newLoad);
                 
@@ -79,10 +85,32 @@ namespace LoadPlanner.Controllers
             {
                 model.IsActionSuccess = false;
                 model.ActionMessage = "Failed to create load.";
-            }
+            }*/
 
-            return View("Index");
+            return View("Index", viewModel);
+        }
+
+        // Reason this is private is beacuse I will only be using this method on this view
+        private List<LoadPlannerModel>? GetAllLoads()
+        {
+            return _repo.GetAllLoads();
+        }
+
+        /*public IActionResult DeleteLoad(int loadID)
+        {
+            LoadPlannerViewModel viewModel = new LoadPlannerViewModel();
+            var currentLoad = _repo.Delete(loadID);
+
+            viewModel.IsActionSuccess = true;
+            viewModel.ActionMessage = "Load has been deleted successfully.";
+
+            viewModel.IsActionSuccess = false;
+            viewModel.ActionMessage = "Error deleting the load please call the Administrator!";
+
+            return View("Index", viewModel);
         }*/
+
+        
 
         public IActionResult Update(LoadPlannerModel load)
         {
