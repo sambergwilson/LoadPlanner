@@ -26,7 +26,7 @@ namespace LoadPlanner.DataAccess.Repositories
             return load.LoadID;
         }
 
-        public int AssignedLoad(LoadPlannerModel load)
+        public int AssignLoad(LoadPlannerModel load)
         {
             LoadPlannerModel existingLoad = _context.LoadModel.Find(load.LoadID)!;
 
@@ -75,5 +75,18 @@ namespace LoadPlanner.DataAccess.Repositories
             return loaded;
         }
 
-     }
+        public int Update(LoadPlannerModel load)
+        {
+            LoadPlannerModel existingLoad = _context.LoadModel.Find(load.LoadID);
+
+            existingLoad.LoadCode = load.LoadCode;
+            existingLoad.RouteNumber = load.RouteNumber;
+            existingLoad.LocationCode = load.LocationCode;
+            existingLoad.LocationDescription = load.LocationDescription;
+
+            _context.SaveChanges();
+
+            return existingLoad.LoadID;
+        }
+    }
 }

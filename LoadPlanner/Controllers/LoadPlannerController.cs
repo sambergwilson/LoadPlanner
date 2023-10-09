@@ -26,6 +26,12 @@ namespace LoadPlanner.Controllers
             return View(viewModel);
         }
 
+        public IActionResult CreatePage() 
+        {
+            return View("CreatePage");
+        }
+
+        // Reason this is private is beacuse I will only be using this method on this view
         private List<LoadPlannerModel>? GetAllLoads()
         {
             return _repo.GetAllLoads();
@@ -41,16 +47,50 @@ namespace LoadPlanner.Controllers
                 viewModel.IsActionSuccess = true;
                 viewModel.ActionMessage = "Load has been deleted successfully.";
             }
-
-            viewModel.IsActionSuccess = false;
-            viewModel.ActionMessage = "Error deleting the load please call the Administrator!";
+            else 
+            {
+                viewModel.IsActionSuccess = false;
+                viewModel.ActionMessage = "Error deleting the load please call the Administrator!";
+            }
 
             return View("Index", viewModel);
         }
 
-        public IActionResult LoadDetails()
+        /*public IActionResult CreatePage(int loadCode, int routeNumber, int locationCode, string locationDescription, string locationAddress)
         {
-            return View();
+            LoadPlannerViewModel model = new LoadPlannerViewModel();
+            var newLoad = new LoadPlannerModel()
+            {
+                LoadCode = loadCode,
+                RouteNumber = routeNumber,
+                LocationCode = locationCode,
+                LocationDescription = locationDescription,
+                LocationAddress = locationAddress
+            };
+
+            if (newLoad != null)
+            {
+                _repo.Create(newLoad);
+                
+                model.IsActionSuccess = true;
+                model.ActionMessage = "Created a new load Successfully.";
+            }
+            else
+            {
+                model.IsActionSuccess = false;
+                model.ActionMessage = "Failed to create load.";
+            }
+
+            return View("Index");
+        }*/
+
+        public IActionResult Update(LoadPlannerModel load)
+        {
+            LoadPlannerViewModel loadViewModel = new LoadPlannerViewModel();    
+            _repo.AssignLoad(load);
+
+
+            return View("Index", loadViewModel);
         }
     }
 }

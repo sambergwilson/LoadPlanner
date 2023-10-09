@@ -1,47 +1,46 @@
 ﻿@model LoadPlannerViewModel
 
-
-<form action="~/LoadPlanner/CreatePage" method="post">
+<form action="~/LoadPlanner/Index" method="post">
     <div>
         <div class="row">
             <div class="col-6 offset-3 text-center">
-                <h1 class="display-4" style="margin: 20px 0px;">Load Planner Details</h1>
+                <h1 class="display-4" style="margin: 20px 0px;">Load Details</h1>
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-2 offset-md-3 form-group">
+            <div class="col-md-3 offset-md-3 form-group">
                 <label>Load Code: </label>
                 <input type="number" class="form-control" name="loadCode" @* value="@Model.CurrentLoad.LoadCode" *@ />
             </div>
-            <div class="col-md-2 offset-md-3 form-group">
+            <div class="col-md-3 offset-md-3 form-group">
                 <label>Route Number: </label>
                 <input type="number" class="form-control" name="routeNumber" @* value="@Model.CurrentLoad.RouteNumber" *@ />
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-3 offset-md-3 form-group">
+            <div class="col-md-2 offset-md-3 form-group">
                 <label>Location Code: </label>
                 <input type="number" class="form-control" name="locationCode" @* value="@Model.CurrentLoad.LocationCode" *@ />
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-3 offset-md-3 form-group">
+            <div class="col-md-4 offset-md-3 form-group">
                 <label>Location Description: </label>
-                <input type="text" class="form-control" name="locationDescription" @* value="@Model.CurrentLoad.LocationDescription" *@ />
+                <input type="text" class="form-control" name="locationDescription" @* value="@Model.CurrentContact.EmailAddress" *@ />
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-6 offset-md-3 form-group">
+            <div class="col-md-5 offset-md-3 form-group">
                 <label>Location Address: </label>
-                <input type="text" class="form-control" name="locationAddress" @* value="@Model.CurrentLoad.LocationAddress" *@ />
+                <input type="text" class="form-control" name="locationAddress" @* value="@Model.CurrentContact.EmailAddress" *@ />
             </div>
         </div>
         <div class="form-row">
             <div class="col-md-6 offset-md-3">
                 <button type="button" class="btn btn-secondary" onclick="location.href = '/LoadPlanner/Index'">CANCEL</button>
-                <button type="submit" class="btn btn-primary" onclick="location.href = '/LoadPlanner/Index'">Save Load</button>
+                <button type="submit" class="btn btn-primary">Save Load</button>
             </div>
         </div>
     </div>
-    <input type="hidden" name="loadID" @* value="@Model.CurrentLoad.LoadID" *@ /> 
+    @* <input type="hidden" name="loadId"  value="@Model.CurrentLoad.LoadID" /> *@
 </form>

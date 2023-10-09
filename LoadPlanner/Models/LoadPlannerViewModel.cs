@@ -14,9 +14,5 @@ namespace LoadPlanner.Models
         public bool IsActionSuccess { get; set; }
 
         public string? ActionMessage { get; set; }
-
-        
-
-
     }
 }

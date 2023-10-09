@@ -1,5 +1,27 @@
 ﻿@model LoadPlannerViewModel;
 
+<script type="text/javascript">
+    function openLocation(url) {
+        window.location.href = url;
+    }
+
+    function confirmDelete(id) {
+        $("#hdnDeleteLoadId").val(id);
+        openModal("deleteModal");
+    }
+
+    function cancelDelete() {
+        $("#hdnDeleteLoadId").val(0);
+        closeModal("deleteModal");
+    }
+
+    function deleteContact() {
+        var id = $("#hdnDeleteLoadId").val();
+        window.location.href = "/LoadPlanner/Delete/" + id;
+    }
+</script>
+
+
 <h1>Load Planner</h1>
 <table>
     <tr>
@@ -8,6 +30,7 @@
         <th>Location Code</th>
         <th>Location Description</th>
         <th>Location Address</th>
+        <th colspan="2"><button type="button" onclick="javascript:openLocation('/LoadPlanner/CreatePage/')" class="btn btn-success btn-sm">Create New Load</button></th>
     </tr>
     @foreach(var item in Model.LoadList)
     {
@@ -17,6 +40,8 @@
             <td>@item.LocationCode</td>
             <td>@item.LocationDescription</td>
             <td>@item.LocationAddress</td>
+            <td><button type="button" onclick="" class="btn btn-warning btn-sm">Assign Load</button></td>
+            <td><button type="button" onclick="" class="btn btn-danger btn-sm">Delete Load</button></td>
         </tr>
     }
 </table>
