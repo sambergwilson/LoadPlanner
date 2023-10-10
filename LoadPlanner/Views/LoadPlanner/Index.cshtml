@@ -6,29 +6,18 @@
     }
 
     function confirmDelete(id) {
-        console.log("Delete Load ID:", id);
         $("#hdnDeleteLoadId").val(id);
-        openModal("deleteModal"); // Call the openModal function to open the modal
+        $("#deleteModal").modal("show"); // Call the openModal function to open the modal
     }
 
     function cancelDelete() {
         $("#hdnDeleteLoadId").val(0);
-        closeModal("deleteModal");
-    }
-
-    function deleteLoad() {
-        console.log("Delete Load ID:", id);
-        var id = $("#hdnDeleteLoadId").val();
-        window.location.href = "/LoadPlanner/DeleteLoad/" + id;
-    }
-
-    function openModal(modalId) { // Define the openModal function
-        $("#" + modalId).modal("show");
+        $("#deleteModal").modal("hide");
     }
 </script>
 
 
-@* <input type="hidden" id="hdnDeleteLoadId" value="0" /> *@
+<input type="hidden" id="hdnDeleteLoadId" value="0" /> 
 
 
 <h1>Load Planner</h1>
@@ -51,24 +40,9 @@
             <td>@item.LocationAddress</td>
             <td><button type="button" onclick="javascript:openLocation('/LoadPlanner/LoadDetails/@item.LoadID')" class="btn btn-warning btn-sm">Assign Load</button></td>
             <td>
-                <button type="button" onclick="console.log('@item.LoadID'); confirmDelete(@item.LoadID);" class="btn btn-danger btn-sm">Delete Load</button>
+                <button type="submit" asp-action="DeleteLoad" asp-controller="LoadPlanner" asp-route-id="@item.LoadID" class="btn btn-danger btn-sm">Delete Load</button>
 
             </td>
         </tr>
     }
 </table>
-
-<div id="deleteModal" class="modal fade" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">CONFIRM DELETE</h5>
-            </div>
-            <div class="modal-body">
-                <p>Are you sure you want to delete this load?</p>
-                <button type="button" onclick="javascript:cancelDelete()" class="btn btn-secondary btn-sm">CANCEL</button>
-                <button type="button" onclick="javascript:deleteLoad()" class="btn btn-danger btn-sm">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>

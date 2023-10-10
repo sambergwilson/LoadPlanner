@@ -2,3 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+function deleteLoad() {
+    var id = $("#hdnDeleteLoadId").val();
+    window.location.href = "/LoadPlanner/DeleteLoad/" + id;
+}
